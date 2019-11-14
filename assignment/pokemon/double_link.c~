@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+
+struct pokedex {//ADD MORE TO THERE
+    struct pokenode *head;
+    struct pokenode *last;
+};
+
+struct pokenode {//LINK
+    struct pokenode *next;
+    struct pokenode *previous;
+    int                find;
+};
+
+void add_pokemon(int input){
+    struct pokenode *n = malloc(sizeof(struct pokenode));
+    struct pokenode *temp = malloc(sizeof(struct pokenode));
+    n -> find = 0;
+    n -> next = NULL;
+    n -> previous = NULL;
+    //printf("head at start is %p\n",pokedex -> head);
+    if(struct pokedex -> head == NULL){
+        struct pokedex -> head = n;
+    }else{
+        temp = pokedex -> last;
+        struct pokedex -> last -> next = n;
+    }
+    struct pokedex -> last = n;
+    struct pokedex -> last -> previous = temp;
+}
+int main(){
+    int input[] = {};
+    int i = 0;
+    while(scanf("%d",&input[i])!=EOF){
+        add_pokemon(input[i]);
+        i++;
+    }
+    *head = pokedex -> head;
+    while(head -> next != NULL){
+        printf("%d", head -> find);
+        head = head -> next;
+    }
+    return 0;
+}

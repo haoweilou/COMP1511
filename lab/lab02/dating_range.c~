@@ -1,0 +1,21 @@
+//Haowei Lou
+//z5258575
+//25 Feb 2019
+#include<stdio.h>
+int main(void){
+    int youAge, upperAge, lowerAge;
+    printf("Enter your age: ");
+    scanf("%d",&youAge);
+    lowerAge=youAge/2+7;
+    upperAge=(youAge-7)*2;
+    
+    if(lowerAge>youAge){
+        printf("You are too young to be dating.\n");
+    }else if(upperAge<=youAge){
+        printf("You are too young to be dating.\n");
+    }else{
+        printf("Your dating range is %d to %d years old.\n", lowerAge,upperAge);
+    } 
+    
+    return 0;
+}

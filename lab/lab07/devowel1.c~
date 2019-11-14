@@ -1,0 +1,24 @@
+//Haowei Lou
+//z5258575
+//01 April 2019
+#include<stdio.h>
+
+int removevowel(int character){
+    if(character=='a'||character=='e'||character=='i'||character=='o'||character=='u'){
+        return 0;
+    }else{
+        return character;
+    }
+}
+
+int main(void){
+    int character=getchar();
+    while(character!=EOF){
+        int newch=removevowel(character);
+        putchar(newch);
+        
+        character=getchar();
+    }
+    
+    return 0;
+}

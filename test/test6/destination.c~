@@ -1,0 +1,34 @@
+//Haowei Lou
+//z5258575
+//12 April 2019
+#include<stdio.h>
+#define MAX 1000
+int remove_duplicate(int length, int source[length], int destination[length]){
+    int i = 0, j = 0, k = 0, num_of_des = 0, rep = 0;
+    while(i < length){
+        j = 0, rep = 0;
+        while(j < num_of_des){
+            if(destination[j] == source[i]){
+                rep = 1;
+            }
+            j++;
+        }
+        if(rep == 0){
+            destination[k] = source[i];
+            k++;
+            num_of_des = k;
+        }
+    
+    }
+    return 0;
+}
+
+int main(void){
+    int array[8] = {1,2,3,4,6,7,8,9};
+    int length = 8;
+    int destination[MAX]={0};
+    int count = count_even(length, array, destination);
+    
+    printf("Even number is %d\n",count);
+    return 0;
+}

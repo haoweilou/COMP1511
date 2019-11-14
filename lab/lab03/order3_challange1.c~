@@ -1,0 +1,23 @@
+//Haowei Lou
+//z5258575
+//02 May
+
+#include<stdio.h>
+int main(void){
+    int a,b,c;
+    int x,y,z;
+    
+    printf("Enter integer: ");scanf("%d",&a);
+    printf("Enter integer: ");scanf("%d",&b);
+    printf("Enter integer: ");scanf("%d",&c);
+    
+    x=a*((a<b && a<c) || a==b || a==c)+b*(b<c && b<a)+c*(c<b && c<a);//asign x to find the lowest number
+    
+    y=b*(((b<c && b>a) || b==a || b==c)+(b>c && b<a))+c*((c<a && c>b)+(c>a && c<b))+a*((a<b && a>c)+(a<b && a>c));//assign y to find the middle number
+    
+    z=c*((c>b && c>a) || c==a || c==b)+a*(a>b && a>c)+b*(b>a && b>c);//asign z to find the biggest number
+    
+    printf("The integers in order are: %d %d %d\n", x,y,z);
+        
+    return 0;
+}
